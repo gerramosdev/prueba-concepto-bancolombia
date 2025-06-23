@@ -12,7 +12,7 @@ public class DataTableSerenity {
         return new SerenityData(
                 entry.get("username"),
                 entry.get("password"),
-                entry.get("unit_business")
+                entry.get("unit_business_name")
         );
     }
 }

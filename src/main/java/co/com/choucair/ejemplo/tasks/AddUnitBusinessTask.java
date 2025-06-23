@@ -25,7 +25,7 @@ public class AddUnitBusinessTask implements Task {
                 Click.on(BusinessPage.SAVE_BUSINESS_BTN)
         );
     }
-    public static AddUnitBusinessTask elementsBusinessForm() {
-        return Tasks.instrumented(AddUnitBusinessTask.class);
+    public static AddUnitBusinessTask elementsBusinessForm(SerenityData businessData) {
+        return Tasks.instrumented(AddUnitBusinessTask.class, businessData);
     }
 }

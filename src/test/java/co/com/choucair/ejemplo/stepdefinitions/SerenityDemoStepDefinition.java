@@ -50,9 +50,9 @@ public class SerenityDemoStepDefinition {
     }
 
     @And("I fill out all the fields of the new business unit registration form")
-    public void iFillOutAllTheFieldsOfTheNewBusinessUnitRegistrationForm() {
+    public void iFillOutAllTheFieldsOfTheNewBusinessUnitRegistrationForm(SerenityData data) {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                AddUnitBusinessTask.elementsBusinessForm()
+                AddUnitBusinessTask.elementsBusinessForm(data)
         );
     }
 
