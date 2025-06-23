@@ -9,5 +9,5 @@ import lombok.Getter;
 public class SerenityData {
   private @Getter String username;
   private @Getter String password;
-  private @Getter String unit_business;
+  private @Getter String unit_business_name;
 }

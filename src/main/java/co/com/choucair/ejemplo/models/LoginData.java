@@ -12,6 +12,7 @@ import java.util.Map;
 public class LoginData {
     private String username;
     private String password;
+    private String unit_business_name;
 
     public static List<LoginData> setData(DataTable datatable) {
         List<LoginData> dates = new ArrayList<>();

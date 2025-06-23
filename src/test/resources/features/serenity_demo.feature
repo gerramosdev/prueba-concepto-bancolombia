@@ -5,7 +5,7 @@ Feature: Login to Serenity Demo,
   Background:
     Given i enter to Serenity Demo
 
-  @ScenarioDataTable
+  @Login
   Scenario Outline: successful login
     When i try to login with correct credentials
       | username   | password   |
@@ -15,6 +15,7 @@ Feature: Login to Serenity Demo,
       | username | password |
       | admin    | serenity |
 
+  @Reunion
   Scenario Outline: creation a new business unit using save and close
     When i try to login with correct credentials
       | username   | password   |
