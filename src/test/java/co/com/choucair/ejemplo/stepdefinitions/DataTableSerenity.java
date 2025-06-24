@@ -12,7 +12,16 @@ public class DataTableSerenity {
         return new SerenityData(
                 entry.get("username"),
                 entry.get("password"),
-                entry.get("unit_business_name")
+                entry.get("unit_business_name"),
+                entry.get("meeting_name"),
+                entry.get("meeting_type"),
+                entry.get("meeting_number"),
+                entry.get("start_date"),
+                entry.get("end_date"),
+                entry.get("location"),
+                entry.get("organized_by"),
+                entry.get("reporter"),
+                entry.get("attendee_list")
         );
     }
 }

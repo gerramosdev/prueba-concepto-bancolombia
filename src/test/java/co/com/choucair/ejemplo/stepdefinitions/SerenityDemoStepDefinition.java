@@ -2,6 +2,7 @@ package co.com.choucair.ejemplo.stepdefinitions;
 
 import co.com.choucair.ejemplo.models.SerenityData;
 import co.com.choucair.ejemplo.questions.ElementVisible;
+import co.com.choucair.ejemplo.questions.MeetingFound;
 import co.com.choucair.ejemplo.questions.UnitBusinessFound;
 import co.com.choucair.ejemplo.tasks.*;
 import io.cucumber.java.Before;
@@ -68,6 +69,36 @@ public class SerenityDemoStepDefinition {
         OnStage.theActorInTheSpotlight().should(
                 GivenWhenThen.seeThat(
                         UnitBusinessFound.unitVisible(data), Matchers.is(true)
+                )
+        );
+    }
+
+    @And("I enter the meeting section and enter meeting page and enter meeting scheduling page")
+    public void iEnterTheMeetingSectionAndEnterMeetingPageAndEnterMeetingSchedulingPage() {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                SearchItemMeetingScheduleTask.searchItemMeeting()
+        );
+    }
+
+    @And("I fill out the meeting form by selecting the created business unit")
+    public void iFillOutTheMeetingFormBySelectingTheCreatedBusinessUnit(SerenityData data) {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                ScheduleMeetingTask.itemScheduleForm(data)
+        );
+    }
+
+    @And("I search the meeting in the table")
+    public void iSearchTheMeetingInTheTable(SerenityData data) {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                SearchMeetingTask.searchMeeting(data)
+        );
+    }
+
+    @Then("I confirm that the meeting has been created")
+    public void iConfirmThatTheMeetingHasBeenCreated(SerenityData data) {
+        OnStage.theActorInTheSpotlight().should(
+                GivenWhenThen.seeThat(
+                        MeetingFound.meetingVisible(data), Matchers.is(true)
                 )
         );
     }

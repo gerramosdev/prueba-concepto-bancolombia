@@ -3,6 +3,7 @@ package co.com.choucair.ejemplo.tasks;
 import co.com.choucair.ejemplo.userinterfaces.DashboardPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 
 public class SearchItemMeetingScheduleTask implements Task {
@@ -13,5 +14,9 @@ public class SearchItemMeetingScheduleTask implements Task {
                 Click.on(DashboardPage.SCHEDULES_ITEM)
 
         );
+    }
+
+    public static  SearchItemMeetingScheduleTask searchItemMeeting() {
+        return Tasks.instrumented(SearchItemMeetingScheduleTask.class);
     }
 }
