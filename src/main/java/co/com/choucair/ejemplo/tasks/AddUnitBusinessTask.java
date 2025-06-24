@@ -19,13 +19,13 @@ public class AddUnitBusinessTask implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(BusinessPage.ADD_BUSINESS_BTN),
-                Enter.theValue(businessData.getUnit_business()).into(BusinessPage.INPUT_NAME_BUSINESS),
+                Enter.theValue(businessData.getUnit_business_name()).into(BusinessPage.INPUT_NAME_BUSINESS),
                 Click.on(BusinessPage.SELECT_PARENT_UNIT),
                 Click.on(BusinessPage.OPTION_PARENT_UNIT),
                 Click.on(BusinessPage.SAVE_BUSINESS_BTN)
         );
     }
-    public static AddUnitBusinessTask elementsBusinessForm() {
-        return Tasks.instrumented(AddUnitBusinessTask.class);
+    public static AddUnitBusinessTask elementsBusinessForm(SerenityData businessData) {
+        return Tasks.instrumented(AddUnitBusinessTask.class, businessData);
     }
 }

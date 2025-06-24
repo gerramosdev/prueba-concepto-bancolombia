@@ -17,11 +17,11 @@ public class SearchUnitBusinessTask implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(businessData.getUnit_business()).into(BusinessPage.INPUT_SEARCH_BUSINESS)
+                Enter.theValue(businessData.getUnit_business_name()).into(BusinessPage.INPUT_SEARCH_BUSINESS)
         );
     }
 
-    public static SearchUnitBusinessTask searchItemUnitBusiness(){
-        return Tasks.instrumented(SearchUnitBusinessTask.class);
+    public static SearchUnitBusinessTask searchItemUnitBusiness(SerenityData businessData){
+        return Tasks.instrumented(SearchUnitBusinessTask.class, businessData);
     }
 }

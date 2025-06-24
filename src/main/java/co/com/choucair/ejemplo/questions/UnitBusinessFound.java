@@ -14,13 +14,13 @@ public class UnitBusinessFound implements Question<Boolean> {
         this.serenityData = serenityData;
     }
 
-    public static UnitBusinessFound unitVisible(SerenityData serenityData) {
-        return new UnitBusinessFound(serenityData);
-    }
+
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        Target LBL_BUSINESS = BusinessPage.LBL_UNI_BUSINESS.of(serenityData.getUnit_business());
+        Target LBL_BUSINESS = BusinessPage.LBL_UNI_BUSINESS.of(serenityData.getUnit_business_name());
         return LBL_BUSINESS.isVisibleFor(actor);
     }
-}
+    public static UnitBusinessFound unitVisible(SerenityData serenityData) {
+        return new UnitBusinessFound(serenityData);
+    }}
