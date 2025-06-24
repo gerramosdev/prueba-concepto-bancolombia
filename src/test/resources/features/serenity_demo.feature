@@ -35,24 +35,24 @@ Feature: Login to Serenity Demo,
       | username | password | unit_business_name |
       | admin    | serenity | Assurance          |
 
-    @Reunion
+  @Reunion
 
-    Scenario Outline: Scheduling a meeting
-      When i try to login with correct credentials
-        | username   | password   |
-        | <username> | <password> |
-      And I enter the meeting section and enter meeting page and enter meeting scheduling page
-      And I fill out all the mandatory fields of the meeting scheduling form.
-        | meeting_name   | meeting_number |
-        | <meeting_name> | <meeting_number>|
-      And I look for the meeting in the table
-        | meeting_name   |
-        | <meeting_name> |
-      Then I confirm that the meeting has been created
-        | meeting_name   |
-        | <meeting_name> |
+  Scenario Outline: Scheduling a meeting
+    When i try to login with correct credentials
+      | username   | password   |
+      | <username> | <password> |
+    And I enter the meeting section and enter meeting page and enter meeting scheduling page
+    And I fill out the meeting form by selecting the created business unit
+      | meeting_name   | meeting_type   | meeting_number   | start_date   | end_date   | location   | unit_business_name   | organized_by   | reporter   | attendee_list   |
+      | <meeting_name> | <meeting_type> | <meeting_number> | <start_date> | <end_date> | <location> | <unit_business_name> | <organized_by> | <reporter> | <attendee_list> |
+    And I search the meeting in the table
+      | meeting_name   |
+      | <meeting_name> |
+    Then I confirm that the meeting has been created
+      | meeting_name   |
+      | <meeting_name> |
 
-      Examples:
-        | username | password | meeting_name | meeting_number |
-        | admin    | serenity | Reunion Bancolombia | CB-001  |
+    Examples:
+      | username | password | meeting_name        | meeting_type | meeting_number | start_date       | end_date         | location | unit_business_name  | organized_by | reporter        | attendee_list |
+      | admin    | serenity | Reunion Bancolombia | Strategy     | GD-001         | 30/06/2025 14:00 | 30/06/2025 16:00 | HQ-02    | Assurance | Adam Stewart | Victoria Wright | Aaron Taylor  |
 
