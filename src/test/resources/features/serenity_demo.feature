@@ -54,5 +54,5 @@ Feature: Login to Serenity Demo,
 
     Examples:
       | username | password | meeting_name        | meeting_type | meeting_number | start_date       | end_date         | location | unit_business_name  | organized_by | reporter        | attendee_list |
-      | admin    | serenity | Reunion Bancolombia | Strategy     | GD-001         | 30/06/2025 14:00 | 30/06/2025 16:00 | HQ-02    | Assurance | Adam Stewart | Victoria Wright | Aaron Taylor  |
+      | admin    | serenity | Reunion Bancolombia | Strategy     | GD-001         | 30/06/2025 14:00 | 30/06/2025 16:00 | HQ-02    | Administration | Adam Stewart | Victoria Wright | Aaron Taylor  |
 
